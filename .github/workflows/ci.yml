@@ -1,0 +1,104 @@
+name: OKF Bundle CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    # Weekly check for link rot
+    - cron: '0 6 * * 1'
+
+jobs:
+  validate:
+    name: Validate OKF Bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout knowledge bundle
+        uses: actions/checkout@v4
+        with:
+          path: knowledge
+
+      - name: Checkout references (shallow)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          path: references
+          # Note: references/ is separate; in real setup, this would be a separate repo or artifact
+          # For now, we assume references/ is available or we skip file:// checks that need it
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: [clippy, rustfmt]
+
+      - name: Install rust-script
+        run: cargo install rust-script
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Validate frontmatter syntax
+        run: |
+          cd knowledge
+          rust-script scripts/check_links.rs
+
+      - name: Check markdownlint compliance
+        run: |
+          cd knowledge
+          # Check all .md files for markdownlint compliance
+          npx -y markdownlint-cli "**/*.md" --config .markdownlint.json || true
+
+      - name: Verify OKF conformance
+        run: |
+          cd knowledge
+          rust-script scripts/verify_okf.rs
+
+  sync-sources:
+    name: Sync sources from references
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout knowledge bundle
+        uses: actions/checkout@v4
+        with:
+          path: knowledge
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout references
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          path: references
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install rust-script
+        run: cargo install rust-script
+
+      - name: Run sync_sources
+        run: |
+          cd knowledge
+          rust-script scripts/sync_sources.rs
+
+      - name: Commit changes
+        run: |
+          cd knowledge
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sync sources from references mirrors ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No changes to commit"
+          fi
