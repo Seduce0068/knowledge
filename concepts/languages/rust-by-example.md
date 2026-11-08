@@ -1,9 +1,17 @@
 ---
 type: Reference
-title: "Rust by Example"
-description: "Runnable, practical Rust examples covering standard library, traits, error handling, testing, and idiomatic patterns."
+title: Rust by Example
+description: Runnable, practical Rust examples covering standard library, traits, error handling, testing, and idiomatic patterns.
 resource: https://doc.rust-lang.org/stable/rust-by-example/
-tags: [rust, examples, patterns, std, traits, error-handling, testing, reference]
+tags:
+- rust
+- examples
+- patterns
+- std
+- traits
+- error-handling
+- testing
+- reference
 status: stable
 generated:
   by: human:koppe
@@ -11,20 +19,21 @@ generated:
 verified: []
 stale_after: 2027-04-14T00:00:00+09:00
 sources:
-  - id: rust-lang-rbe-local
-    resource: file:///home/koppe/references/languages/rust-advanced/rust-by-example/src/
-    title: "Rust by Example Source (local mirror)"
-    author: team:rust-lang
-    last_modified: 2026-04-19T08:40:28-03:00
-    usage_count: 8000
-    usage_window: { from: 2026-01-01T00:00:00Z, to: 2026-12-31T00:00:00Z }
-  - id: rust-lang-rbe-upstream
-    resource: https://github.com/rust-lang/rust-by-example
-    title: "Rust by Example Upstream Repository"
-    author: team:rust-lang
-    last_modified: 2026-04-19T08:40:28-03:00
+- id: rust-lang-rbe-local
+  resource: file:///home/koppe/references/languages/rust-advanced/rust-by-example/src/
+  title: Rust by Example Source (local mirror)
+  author: team:rust-lang
+  last_modified: 2026-04-19T08:40:28-03:00
+  usage_count: 1
+  usage_window:
+    from: 2026-01-01T00:00:00Z
+    to: 2026-12-31T00:00:00Z
+- id: rust-lang-rbe-upstream
+  resource: https://github.com/rust-lang/rust-by-example
+  title: Rust by Example Upstream Repository
+  author: team:rust-lang
+  last_modified: 2026-04-19T08:40:28-03:00
 ---
-
 # Overview
 
 **Rust by Example (RBE)** is a collection of runnable examples illustrating Rust concepts and standard library usage. Each example is a complete, compilable program demonstrating idiomatic patterns.

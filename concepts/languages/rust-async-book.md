@@ -1,9 +1,18 @@
 ---
 type: Reference
-title: "Async Programming in Rust"
-description: "Comprehensive guide to async/await internals, executors, Future trait, pinning, and streams."
+title: Async Programming in Rust
+description: Comprehensive guide to async/await internals, executors, Future trait, pinning, and streams.
 resource: https://rust-lang.github.io/async-book/
-tags: [rust, async, await, future, executor, pinning, streams, advanced, reference]
+tags:
+- rust
+- async
+- await
+- future
+- executor
+- pinning
+- streams
+- advanced
+- reference
 status: stable
 generated:
   by: human:koppe
@@ -11,20 +20,21 @@ generated:
 verified: []
 stale_after: 2027-04-14T00:00:00+09:00
 sources:
-  - id: rust-lang-async-book-local
-    resource: file:///home/koppe/references/languages/rust-advanced/async-book/src/
-    title: "Async Book Source (local mirror)"
-    author: team:rust-lang
-    last_modified: 2026-05-15T08:48:03+12:00
-    usage_count: 3000
-    usage_window: { from: 2026-01-01T00:00:00Z, to: 2026-12-31T00:00:00Z }
-  - id: rust-lang-async-book-upstream
-    resource: https://github.com/rust-lang/async-book
-    title: "Async Book Upstream Repository"
-    author: team:rust-lang
-    last_modified: 2026-05-15T08:48:03+12:00
+- id: rust-lang-async-book-local
+  resource: file:///home/koppe/references/languages/rust-advanced/async-book/src/
+  title: Async Book Source (local mirror)
+  author: team:rust-lang
+  last_modified: 2026-05-15T08:48:03+12:00
+  usage_count: 1
+  usage_window:
+    from: 2026-01-01T00:00:00Z
+    to: 2026-12-31T00:00:00Z
+- id: rust-lang-async-book-upstream
+  resource: https://github.com/rust-lang/async-book
+  title: Async Book Upstream Repository
+  author: team:rust-lang
+  last_modified: 2026-05-15T08:48:03+12:00
 ---
-
 # Overview
 
 The **Async Book** is the official guide to asynchronous programming in Rust. It covers the `Future` trait, async/await transformation, executor design, pinning, wakers, streams, and ecosystem integration.

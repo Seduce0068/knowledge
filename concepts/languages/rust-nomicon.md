@@ -1,9 +1,16 @@
 ---
 type: Reference
-title: "The Rustonomicon: Unsafe Rust Guide"
-description: "Official guide to unsafe Rust, memory layout, FFI, and concurrency primitives."
+title: 'The Rustonomicon: Unsafe Rust Guide'
+description: Official guide to unsafe Rust, memory layout, FFI, and concurrency primitives.
 resource: https://doc.rust-lang.org/nomicon/
-tags: [rust, unsafe, memory, ffi, concurrency, advanced, reference]
+tags:
+- rust
+- unsafe
+- memory
+- ffi
+- concurrency
+- advanced
+- reference
 status: stable
 generated:
   by: human:koppe
@@ -11,20 +18,21 @@ generated:
 verified: []
 stale_after: 2027-04-14T00:00:00+09:00
 sources:
-  - id: rust-lang-nomicon-local
-    resource: file:///home/koppe/references/languages/rust-advanced/nomicon/src/
-    title: "Rustonomicon Source (local mirror)"
-    author: team:rust-lang
-    last_modified: 2026-02-27T23:27:18+00:00
-    usage_count: 5000
-    usage_window: { from: 2026-01-01T00:00:00Z, to: 2026-12-31T00:00:00Z }
-  - id: rust-lang-nomicon-upstream
-    resource: https://github.com/rust-lang/nomicon
-    title: "Rustonomicon Upstream Repository"
-    author: team:rust-lang
-    last_modified: 2026-02-27T23:27:18+00:00
+- id: rust-lang-nomicon-local
+  resource: file:///home/koppe/references/languages/rust-advanced/nomicon/src/
+  title: Rustonomicon Source (local mirror)
+  author: team:rust-lang
+  last_modified: 2026-02-27T23:27:18Z
+  usage_count: 1
+  usage_window:
+    from: 2026-01-01T00:00:00Z
+    to: 2026-12-31T00:00:00Z
+- id: rust-lang-nomicon-upstream
+  resource: https://github.com/rust-lang/nomicon
+  title: Rustonomicon Upstream Repository
+  author: team:rust-lang
+  last_modified: 2026-02-27T23:27:18+00:00
 ---
-
 # Overview
 
 The **Rustonomicon** is the official guide to writing **unsafe Rust** code. It covers the semantics of `unsafe`, memory layout, FFI, concurrency primitives, and the implementation of core library types like `Vec` and `Arc`.
