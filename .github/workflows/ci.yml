@@ -46,6 +46,9 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Validate frontmatter syntax
+        env:
+          KNOWLEDGE_ROOT: ${{ github.workspace }}/knowledge
+          REFERENCES_ROOT: ${{ github.workspace }}/references
         run: |
           cd knowledge
           rust-script scripts/check_links.rs
@@ -54,9 +57,12 @@ jobs:
         run: |
           cd knowledge
           # Check all .md files for markdownlint compliance
-          npx -y markdownlint-cli "**/*.md" --config .markdownlint.json || true
+          npx -y markdownlint-cli "**/*.md" --config .markdownlint.json
 
       - name: Verify OKF conformance
+        env:
+          KNOWLEDGE_ROOT: ${{ github.workspace }}/knowledge
+          REFERENCES_ROOT: ${{ github.workspace }}/references
         run: |
           cd knowledge
           rust-script scripts/verify_okf.rs
@@ -86,6 +92,9 @@ jobs:
         run: cargo install rust-script
 
       - name: Run sync_sources
+        env:
+          KNOWLEDGE_ROOT: ${{ github.workspace }}/knowledge
+          REFERENCES_ROOT: ${{ github.workspace }}/references
         run: |
           cd knowledge
           rust-script scripts/sync_sources.rs
