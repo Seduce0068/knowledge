@@ -5,7 +5,7 @@ description: "Agent skill for advanced Rust: unsafe code, async/await patterns, 
 tags: [rust, agent-skill, implementation, unsafe, async, advanced]
 status: stable
 generated:
-  by: human:koppe
+  by: role:maintainer
   at: 2026-10-14T00:00:00+09:00
 verified: []
 stale_after: 2027-04-14T00:00:00+09:00
@@ -13,17 +13,17 @@ sources:
   - id: rust-nomicon
     resource: /concepts/languages/rust-nomicon.md
     title: "The Rustonomicon Concept"
-    author: human:koppe
+    author: role:maintainer
     last_modified: 2026-10-14T00:00:00+09:00
   - id: rust-async-book
     resource: /concepts/languages/rust-async-book.md
     title: "Async Programming in Rust Concept"
-    author: human:koppe
+    author: role:maintainer
     last_modified: 2026-10-14T00:00:00+09:00
   - id: rust-by-example
     resource: /concepts/languages/rust-by-example.md
     title: "Rust by Example Concept"
-    author: human:koppe
+    author: role:maintainer
     last_modified: 2026-10-14T00:00:00+09:00
   - id: rust-advanced-mirror
     resource: file://<home>/references/languages/rust-advanced/

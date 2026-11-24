@@ -14,7 +14,7 @@ tags:
 - reference
 status: stable
 generated:
-  by: human:koppe
+  by: role:maintainer
   at: 2026-10-14T00:00:00+09:00
 verified: []
 stale_after: 2027-04-14T00:00:00+09:00

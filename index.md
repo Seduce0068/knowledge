@@ -4,7 +4,7 @@ title: "Local Knowledge Bundle"
 description: "Curated reference knowledge for AI-assisted development, sourced from ~/references mirrors."
 tags: [knowledge-bundle, okf, references]
 generated:
-  by: human:koppe
+  by: role:maintainer
   at: 2026-10-14T00:00:00+09:00
 verified: []
 status: stable

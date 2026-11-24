@@ -42,9 +42,26 @@ struct Frontmatter {
 }
 
 fn main() -> Result<()> {
-    let knowledge_root = PathBuf::from("<home>/knowledge");
-    let references_root = PathBuf::from("<home>/references");
+    // Roots come from CLI arguments or environment variables; no host-specific
+    // absolute path is embedded in the script.
+    let mut args = std::env::args_os().skip(1);
+    let knowledge_root = args
+        .next()
+        .map(PathBuf::from)
+        .or_else(|| std::env::var_os("KNOWLEDGE_ROOT").map(PathBuf::from))
+        .context("set KNOWLEDGE_ROOT or pass the knowledge root as the first argument")?;
+    let references_root = args
+        .next()
+        .map(PathBuf::from)
+        .or_else(|| std::env::var_os("REFERENCES_ROOT").map(PathBuf::from))
+        .unwrap_or_else(|| {
+            knowledge_root
+                .parent()
+                .map(|parent| parent.join("references"))
+                .unwrap_or_else(|| knowledge_root.join("references"))
+        });
 
+    let mut scanned_files = 0;
     let mut total_links = 0;
     let mut valid_links = 0;
     let mut broken_links = 0;
@@ -62,6 +79,7 @@ fn main() -> Result<()> {
         if rel_path == Path::new("index.md") || rel_path == Path::new("log.md") {
             continue;
         }
+        scanned_files += 1;
 
         let content =
             fs::read_to_string(path).with_context(|| format!("Reading {}", path.display()))?;
@@ -101,6 +119,14 @@ fn main() -> Result<()> {
                 }
             }
         }
+    }
+
+    // Fail closed: a missing or empty root must not look like a clean run.
+    if scanned_files == 0 {
+        anyhow::bail!(
+            "no Markdown files found under {}; check KNOWLEDGE_ROOT",
+            knowledge_root.display()
+        );
     }
 
     println!("\n=== Link Check Summary ===");

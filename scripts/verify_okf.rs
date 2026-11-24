@@ -38,7 +38,13 @@ struct Generated {
 }
 
 fn main() -> Result<()> {
-    let knowledge_root = PathBuf::from("<home>/knowledge");
+    // Root comes from the first CLI argument or KNOWLEDGE_ROOT; no host-specific
+    // absolute path is embedded in the script.
+    let knowledge_root = std::env::args_os()
+        .nth(1)
+        .map(PathBuf::from)
+        .or_else(|| std::env::var_os("KNOWLEDGE_ROOT").map(PathBuf::from))
+        .context("set KNOWLEDGE_ROOT or pass the knowledge root as the first argument")?;
 
     let mut total_files = 0;
     let mut errors = Vec::new();
@@ -199,6 +205,14 @@ fn main() -> Result<()> {
                 ));
             }
         }
+    }
+
+    // Fail closed: a missing or empty root must not report a clean pass.
+    if total_files == 0 {
+        anyhow::bail!(
+            "no Markdown files found under {}; check KNOWLEDGE_ROOT",
+            knowledge_root.display()
+        );
     }
 
     println!("=== OKF Conformance Check ===");
