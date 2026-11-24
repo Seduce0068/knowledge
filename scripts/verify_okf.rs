@@ -38,7 +38,7 @@ struct Generated {
 }
 
 fn main() -> Result<()> {
-    let knowledge_root = PathBuf::from("/home/koppe/knowledge");
+    let knowledge_root = PathBuf::from("<home>/knowledge");
 
     let mut total_files = 0;
     let mut errors = Vec::new();

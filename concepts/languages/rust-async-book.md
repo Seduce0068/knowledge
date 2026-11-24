@@ -21,7 +21,7 @@ verified: []
 stale_after: 2027-04-14T00:00:00+09:00
 sources:
 - id: rust-lang-async-book-local
-  resource: file:///home/koppe/references/languages/rust-advanced/async-book/src/
+  resource: file://<home>/references/languages/rust-advanced/async-book/src/
   title: Async Book Source (local mirror)
   author: team:rust-lang
   last_modified: 2026-05-15T08:48:03+12:00

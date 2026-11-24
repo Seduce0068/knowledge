@@ -26,7 +26,7 @@ sources:
     author: human:koppe
     last_modified: 2026-10-14T00:00:00+09:00
   - id: rust-advanced-mirror
-    resource: file:///home/koppe/references/languages/rust-advanced/
+    resource: file://<home>/references/languages/rust-advanced/
     title: "Rust Advanced Mirror (all three sources)"
     author: team:rust-lang
 ---

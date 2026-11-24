@@ -20,7 +20,7 @@ verified: []
 stale_after: 2027-04-14T00:00:00+09:00
 sources:
 - id: rust-lang-rbe-local
-  resource: file:///home/koppe/references/languages/rust-advanced/rust-by-example/src/
+  resource: file://<home>/references/languages/rust-advanced/rust-by-example/src/
   title: Rust by Example Source (local mirror)
   author: team:rust-lang
   last_modified: 2026-04-19T08:40:28-03:00

@@ -19,7 +19,7 @@ verified: []
 stale_after: 2027-04-14T00:00:00+09:00
 sources:
 - id: rust-lang-nomicon-local
-  resource: file:///home/koppe/references/languages/rust-advanced/nomicon/src/
+  resource: file://<home>/references/languages/rust-advanced/nomicon/src/
   title: Rustonomicon Source (local mirror)
   author: team:rust-lang
   last_modified: 2026-02-27T23:27:18Z
@@ -41,11 +41,11 @@ The **Rustonomicon** is the official guide to writing **unsafe Rust** code. It c
 
 | Chapter | Focus | Local Path |
 |---------|-------|------------|
-| [Memory Layout](file:///home/koppe/references/languages/rust-advanced/nomicon/src/memory-layout.md) | `#[repr(C)]`, alignment, niche optimization | `nomicon/src/memory-layout.md` |
-| [FFI](file:///home/koppe/references/languages/rust-advanced/nomicon/src/ffi.md) | `extern "C"`, `c_char`, callbacks, destructors | `nomicon/src/ffi.md` |
-| [Concurrency](file:///home/koppe/references/languages/rust-advanced/nomicon/src/concurrency.md) | `Send`/`Sync`, atomics, memory ordering | `nomicon/src/concurrency.md` |
-| [Vec Implementation](file:///home/koppe/references/languages/rust-advanced/nomicon/src/vec.md) | Allocation, growth, `RawVec`, `Drain` | `nomicon/src/vec.md` |
-| [Arc/Rc](file:///home/koppe/references/languages/rust-advanced/nomicon/src/arc.md) | Reference counting, weak pointers | `nomicon/src/arc.md` |
+| [Memory Layout](file://<home>/references/languages/rust-advanced/nomicon/src/memory-layout.md) | `#[repr(C)]`, alignment, niche optimization | `nomicon/src/memory-layout.md` |
+| [FFI](file://<home>/references/languages/rust-advanced/nomicon/src/ffi.md) | `extern "C"`, `c_char`, callbacks, destructors | `nomicon/src/ffi.md` |
+| [Concurrency](file://<home>/references/languages/rust-advanced/nomicon/src/concurrency.md) | `Send`/`Sync`, atomics, memory ordering | `nomicon/src/concurrency.md` |
+| [Vec Implementation](file://<home>/references/languages/rust-advanced/nomicon/src/vec.md) | Allocation, growth, `RawVec`, `Drain` | `nomicon/src/vec.md` |
+| [Arc/Rc](file://<home>/references/languages/rust-advanced/nomicon/src/arc.md) | Reference counting, weak pointers | `nomicon/src/arc.md` |
 
 # Source Structure (Local Mirror)
 

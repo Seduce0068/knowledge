@@ -42,8 +42,8 @@ struct Frontmatter {
 }
 
 fn main() -> Result<()> {
-    let knowledge_root = PathBuf::from("/home/koppe/knowledge");
-    let references_root = PathBuf::from("/home/koppe/references");
+    let knowledge_root = PathBuf::from("<home>/knowledge");
+    let references_root = PathBuf::from("<home>/references");
 
     let mut total_links = 0;
     let mut valid_links = 0;

@@ -60,8 +60,8 @@ struct Generated {
 }
 
 fn main() -> Result<()> {
-    let knowledge_root = PathBuf::from("/home/koppe/knowledge");
-    let references_root = PathBuf::from("/home/koppe/references");
+    let knowledge_root = PathBuf::from("<home>/knowledge");
+    let references_root = PathBuf::from("<home>/references");
 
     let mut updated_count = 0;
     let mut error_count = 0;
