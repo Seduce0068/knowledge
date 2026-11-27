@@ -75,8 +75,11 @@ fn main() -> Result<()> {
         let path = entry.path();
         let rel_path = path.strip_prefix(&knowledge_root)?;
 
-        // Skip index.md and log.md at root
-        if rel_path == Path::new("index.md") || rel_path == Path::new("log.md") {
+        // ルートの特別ファイルと RAG 用生成コーパス（frontmatter 除去済み）は除外する。
+        if rel_path == Path::new("index.md")
+            || rel_path == Path::new("log.md")
+            || rel_path.starts_with("rag/corpus")
+        {
             continue;
         }
         scanned_files += 1;

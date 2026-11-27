@@ -1,0 +1,43 @@
+# Usage
+
+**Invoke this skill when:**
+- Implementing `unsafe` Rust code (FFI, raw pointers, manual memory management)
+- Working with async/await internals (executors, `Future` pinning, wakers)
+- Needing concrete, idiomatic Rust examples for standard patterns
+- Reviewing code for UB, soundness, or memory safety issues
+
+# References
+
+This skill aggregates three core Rust advanced references:
+
+1. **[The Rustonomicon](/concepts/languages/rust-nomicon.md)** (`type: Reference`)
+   - Unsafe Rust semantics, memory layout, FFI, concurrency primitives
+   - Source: `~/references/languages/rust-advanced/nomicon/`
+   - Key chapters: Memory Layout, FFI, Concurrency, Vec, Arc
+
+2. **[Async Programming in Rust](/concepts/languages/rust-async-book.md)** (`type: Reference`)
+   - Async/await transformation, executors, `Future` trait, pinning
+   - Source: `~/references/languages/rust-advanced/async-book/`
+   - Key chapters: Executor design, Waker, Pin, Stream
+
+3. **[Rust by Example](/concepts/languages/rust-by-example.md)** (`type: Reference`)
+   - Runnable examples for standard library, traits, error handling, testing
+   - Source: `~/references/languages/rust-advanced/rust-by-example/`
+   - Key sections: Flow control, Traits, Std types, Error handling
+
+# Local Mirror Paths
+
+| Reference | Local Mirror Path | Upstream |
+|-----------|-------------------|----------|
+| Nomicon | `~/references/languages/rust-advanced/nomicon/src/` | github.com/rust-lang/nomicon |
+| Async Book | `~/references/languages/rust-advanced/async-book/src/` | github.com/rust-lang/async-book |
+| By Example | `~/references/languages/rust-advanced/rust-by-example/src/` | github.com/rust-lang/rust-by-example |
+
+# Agent Behavior
+
+When this skill is active:
+- Prefer `file://` references for offline, fast access
+- Cite specific chapters via `file://` paths in responses
+- Cross-reference between the three sources when relevant
+- Flag any `unsafe` usage with Nomicon chapter references
+- Verify async patterns against Async Book executor model

@@ -1,0 +1,168 @@
+[
+  {
+    "source": "concepts/languages/rust-nomicon.md",
+    "type": "Reference",
+    "title": "The Rustonomicon: Unsafe Rust Guide",
+    "description": "Official guide to unsafe Rust, memory layout, FFI, and concurrency primitives.",
+    "tags": [
+      "rust",
+      "unsafe",
+      "memory",
+      "ffi",
+      "concurrency",
+      "advanced",
+      "reference"
+    ],
+    "status": "stable",
+    "stale_after": "2027-04-14T00:00:00+09:00",
+    "verified": [],
+    "sources": [
+      {
+        "id": "rust-lang-nomicon-local",
+        "resource": "file://<home>/references/languages/rust-advanced/nomicon/src/",
+        "title": "Rustonomicon Source (local mirror)",
+        "author": "team:rust-lang",
+        "last_modified": "2026-02-27T23:27:18Z",
+        "usage_count": 1,
+        "usage_window": {
+          "from": "2026-01-01T00:00:00Z",
+          "to": "2026-12-31T00:00:00Z"
+        }
+      },
+      {
+        "id": "rust-lang-nomicon-upstream",
+        "resource": "https://github.com/rust-lang/nomicon",
+        "title": "Rustonomicon Upstream Repository",
+        "author": "team:rust-lang",
+        "last_modified": "2026-02-27T23:27:18+00:00"
+      }
+    ]
+  },
+  {
+    "source": "concepts/languages/rust-async-book.md",
+    "type": "Reference",
+    "title": "Async Programming in Rust",
+    "description": "Comprehensive guide to async/await internals, executors, Future trait, pinning, and streams.",
+    "tags": [
+      "rust",
+      "async",
+      "await",
+      "future",
+      "executor",
+      "pinning",
+      "streams",
+      "advanced",
+      "reference"
+    ],
+    "status": "stable",
+    "stale_after": "2027-04-14T00:00:00+09:00",
+    "verified": [],
+    "sources": [
+      {
+        "id": "rust-lang-async-book-local",
+        "resource": "file://<home>/references/languages/rust-advanced/async-book/src/",
+        "title": "Async Book Source (local mirror)",
+        "author": "team:rust-lang",
+        "last_modified": "2026-05-15T08:48:03+12:00",
+        "usage_count": 1,
+        "usage_window": {
+          "from": "2026-01-01T00:00:00Z",
+          "to": "2026-12-31T00:00:00Z"
+        }
+      },
+      {
+        "id": "rust-lang-async-book-upstream",
+        "resource": "https://github.com/rust-lang/async-book",
+        "title": "Async Book Upstream Repository",
+        "author": "team:rust-lang",
+        "last_modified": "2026-05-15T08:48:03+12:00"
+      }
+    ]
+  },
+  {
+    "source": "concepts/languages/rust-by-example.md",
+    "type": "Reference",
+    "title": "Rust by Example",
+    "description": "Runnable, practical Rust examples covering standard library, traits, error handling, testing, and idiomatic patterns.",
+    "tags": [
+      "rust",
+      "examples",
+      "patterns",
+      "std",
+      "traits",
+      "error-handling",
+      "testing",
+      "reference"
+    ],
+    "status": "stable",
+    "stale_after": "2027-04-14T00:00:00+09:00",
+    "verified": [],
+    "sources": [
+      {
+        "id": "rust-lang-rbe-local",
+        "resource": "file://<home>/references/languages/rust-advanced/rust-by-example/src/",
+        "title": "Rust by Example Source (local mirror)",
+        "author": "team:rust-lang",
+        "last_modified": "2026-04-19T08:40:28-03:00",
+        "usage_count": 1,
+        "usage_window": {
+          "from": "2026-01-01T00:00:00Z",
+          "to": "2026-12-31T00:00:00Z"
+        }
+      },
+      {
+        "id": "rust-lang-rbe-upstream",
+        "resource": "https://github.com/rust-lang/rust-by-example",
+        "title": "Rust by Example Upstream Repository",
+        "author": "team:rust-lang",
+        "last_modified": "2026-04-19T08:40:28-03:00"
+      }
+    ]
+  },
+  {
+    "source": "skills/rust-advanced.md",
+    "type": "Skill",
+    "title": "Rust Advanced Implementation Reference",
+    "description": "Agent skill for advanced Rust: unsafe code, async/await patterns, practical examples.",
+    "tags": [
+      "rust",
+      "agent-skill",
+      "implementation",
+      "unsafe",
+      "async",
+      "advanced"
+    ],
+    "status": "stable",
+    "stale_after": "2027-04-14T00:00:00+09:00",
+    "verified": [],
+    "sources": [
+      {
+        "id": "rust-nomicon",
+        "resource": "/concepts/languages/rust-nomicon.md",
+        "title": "The Rustonomicon Concept",
+        "author": "human:<user>",
+        "last_modified": "2026-10-14T00:00:00+09:00"
+      },
+      {
+        "id": "rust-async-book",
+        "resource": "/concepts/languages/rust-async-book.md",
+        "title": "Async Programming in Rust Concept",
+        "author": "human:<user>",
+        "last_modified": "2026-10-14T00:00:00+09:00"
+      },
+      {
+        "id": "rust-by-example",
+        "resource": "/concepts/languages/rust-by-example.md",
+        "title": "Rust by Example Concept",
+        "author": "human:<user>",
+        "last_modified": "2026-10-14T00:00:00+09:00"
+      },
+      {
+        "id": "rust-advanced-mirror",
+        "resource": "file://<home>/references/languages/rust-advanced/",
+        "title": "Rust Advanced Mirror (all three sources)",
+        "author": "team:rust-lang"
+      }
+    ]
+  }
+]
